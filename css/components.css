@@ -32,3 +32,236 @@
 .branch__name span {
   color: var(--color-accent);
 }
+
+.site-nav__link {
+  display: flex;
+  align-items: center;
+  min-block-size: 2.5rem;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-full);
+  color: var(--color-header-text);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+  transition: background-color var(--duration-fast) ease;
+
+  &:hover {
+    background-color: rgb(255 255 255 / 0.12);
+  }
+
+  &[aria-current="page"] {
+    background-color: var(--color-accent);
+    color: var(--palette-blue-900);
+  }
+
+  @media (width >= 40rem) {
+    font-size: var(--text-base);
+    padding-inline: var(--space-4);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-block-size: 2.75rem;
+    padding: var(--space-2) var(--space-6);
+    border: 2px solid transparent;
+    border-radius: var(--radius-full);
+    font-weight: var(--weight-semibold);
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      background-color var(--duration-fast) ease,
+      translate var(--duration-fast) var(--ease-out);
+
+    &:hover {
+      translate: 0 -1px;
+    }
+    &:active {
+      translate: 0 0;
+    }
+  }
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+
+  &:hover {
+    background-color: var(--color-primary-hover);
+  }
+}
+
+.btn--accent {
+  background-color: var(--color-accent);
+  color: var(--palette-blue-900);
+
+  &:hover {
+    backgroud-color: #5ee0e5;
+  }
+}
+
+.btn--ghost {
+  border-color: currentColor;
+  background-color: transparent;
+  color: inherit;
+
+  &:hover {
+    background-color: rgb(255 255 255 / 0.12);
+  }
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.hero__eyebrow {
+  margin-block-end: var(--space-2);
+  color: var(--color-accent);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.88em;
+  text-transform: uppercase;
+}
+
+.hero__lead {
+  margin-block: var(--space-4) var(--space-6);
+  max-inline-size: 52ch;
+  font-size: var(--text-lg);
+  opacity: 0.92;
+}
+
+.hero__media {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.125rem var(--space-3);
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-muted);
+  color: var(--color-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(-space-1);
+  padding: 0.125rem var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge--hot {
+  background-color: var(--color-warning-bg);
+  color: var(--color-warning);
+
+  &::before {
+    content: "";
+    inline-size: 0.5rem;
+    block-size: 0.5rem;
+    border-radius: 50%;
+    background-color: currentColor;
+    animation: pluse 1.6s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transition var(--duration-normal) var(--ease-out),
+    box-shadow var(--duration-normal) var(--ease-out);
+
+  &:hover {
+    translate: 0 -4px;
+    box-shadow: var(--shadow-lg);
+  }
+
+  &:has(.badge--hot) {
+    border-color: var(--color-warning);
+    box-shadow:
+      0 0 0 1px var(--color-warning),
+      var(--shadow-sm);
+  }
+}
+
+.card__media {
+  inline-size: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-6) var(--space-6);
+}
+
+.car__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.card__title {
+  font-size: var(--text-lg);
+
+  & a {
+    color: var(--color-text);
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+  }
+}
+
+.card__text {
+  color: var(--color-text-muted);
+}
+
+.event-card__info {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+
+  & time {
+    color: var(--color-text);
+    font-weight: var(--weight-semibold);
+  }
+}
+
+.event-card__seats {
+  margin-block: auto;
+  padding-block-start: var(--space-3);
+  border-block-start: 1px dashed var(--color-border);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-success);
+}
