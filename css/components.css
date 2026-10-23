@@ -18,7 +18,7 @@
 }
 .brand {
     display: inline-flex;
-    alight-items: center;
+    align-items: center;
     gap: var(--space-2);
     color: inherit;
     font-size: var(--text-lg);
@@ -100,7 +100,7 @@
   color: var(--palette-blue-900);
 
   &:hover {
-    backgroud-color: #5ee0e5;
+    background-color: #5ee0e5;
   }
 }
 
@@ -154,7 +154,7 @@
 .badge {
   display: inline-flex;
   align-items: center;
-  gap: var(-space-1);
+  gap: var(--space-1);
   padding: 0.125rem var(--space-2);
   border-radius: var(--radius-sm);
   font-size: 0.75rem;
@@ -173,7 +173,7 @@
     block-size: 0.5rem;
     border-radius: 50%;
     background-color: currentColor;
-    animation: pluse 1.6s ease-in-out infinite;
+    animation: pulse 1.6s ease-in-out infinite;
   }
 }
 
@@ -193,7 +193,7 @@
   background-color: var(--color-surface);
   box-shadow: var(--shadow-sm);
   transition:
-    transition var(--duration-normal) var(--ease-out),
+    translate var(--duration-normal) var(--ease-out),
     box-shadow var(--duration-normal) var(--ease-out);
 
   &:hover {
@@ -223,7 +223,7 @@
   padding: var(--space-4) var(--space-6) var(--space-6);
 }
 
-.car__meta {
+.card__meta {
   display: flex;
   flex-wrap: wrap;
   align-items: center;

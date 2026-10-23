@@ -37,6 +37,13 @@
   padding: 0;
   list-style: none;
 }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+  gap: var(--space-6);
+  padding: 0;
+  list-style: none;
+}
 
 .site-footer {
   margin-block-start: var(--space-16);
@@ -67,9 +74,10 @@
 }
 
 .page {
-  padding-block: var(space-8);
+  padding-block: var(--space-8);
 }
-.pace--narrow {
+
+.page--narrow {
   max-inline-size: var(--container-narrow);
 }
 
@@ -98,7 +106,7 @@
   gap: var(--space-6);
   align-items: center;
   inline-size: calc(100% - 2 * var(--space-4));
-  max-inline-size: valc(var(--container-max) - 2 * var(--space-6));
+  max-inline-size: calc(var(--container-max) - 2 * var(--space-6));
   margin-block-start: var(--space-6);
   padding: var(--space-8) var(--space-6);
 
