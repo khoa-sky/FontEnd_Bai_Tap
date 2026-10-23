@@ -3,7 +3,7 @@
 *::after {
   box-sizing: border-box;
 }
-:where(body, h1, h2, h3, p, ul, ol, dl, đ, figure, fieldset) {
+:where(body, h1, h2, h3, p, ul, ol, dl, dd, figure, fieldset) {
   margin: 0;
 }
 
@@ -91,7 +91,7 @@ small {
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
-    animation-iteration-cont: 1 !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
